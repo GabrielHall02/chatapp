@@ -1,12 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from 'next/navigation'
 
 export default function Auth() {
+	const router = useRouter()
 	const [input, setInput] = useState("");
 
 	const authenticate = (e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLInputElement>) => {
-		window.location.href = "/chat?username=" + input;
+		e.preventDefault();
+		router.push("/chat?username=" + input);
+		//window.location.href = "/chat?username=" + input;
 	};
 
 	return (
@@ -25,7 +29,6 @@ export default function Auth() {
 					onChange={(event) => setInput(event.target.value)}
 					onKeyDown={(e) => {
 						if (e.key === "Enter" && !e.shiftKey) {
-							e.preventDefault();
 							authenticate(e);
 						}
 					}}
@@ -34,7 +37,6 @@ export default function Auth() {
 				<div
 					className=" h-14 rounded-lg bg-green-600 text-gray-200 overflow-hidden cursor-pointer flex justify-center items-center hover:brightness-110"
 					onClick={(e) => {
-						e.preventDefault();
 						authenticate(e);
 					}}
 				>

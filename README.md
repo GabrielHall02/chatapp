@@ -5,11 +5,8 @@ First, run the server:
 ```bash
 docker-compose up
 # or
+npm i
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the home page.
@@ -22,8 +19,7 @@ After you have entered a username, you will be redirected to the chat page. Here
 
 
 ## Technical Details
-This app was developed using `nextjs 13`, `typescript`, 
-and `tailwindcss`.
+This app was developed using `nextjs 13`, `typescript`, and `tailwindcss`.
 
 ### Backend
 The webapp doesn't use a database. This means that the messages won't be stored if the page is refreshed.
