@@ -1,3 +1,7 @@
+## Overview
+This is a simple web chat app that integrates with openAI api.
+To use this you will need a openAI api key
+
 ## Getting Started
 
 First, run the server:
